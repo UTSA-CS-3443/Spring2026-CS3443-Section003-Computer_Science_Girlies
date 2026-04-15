@@ -6,7 +6,7 @@ public class Deck {
     public void drawCard(){
 
     }
-    public void isEmpty(){
+    public Boolean isEmpty(){
 
     }
 }
