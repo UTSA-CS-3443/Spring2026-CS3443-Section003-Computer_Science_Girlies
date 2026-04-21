@@ -32,11 +32,12 @@ public class Player {
     }
 
   }
-  public boolean hasValidMove(){
-    /*Purpose:
-    Checks whether the player can make a legal move given the current game situation.
-    Look through the player’s hand. Determine if at least one card is playable
-
-    Needs to check: Top card on discard pile, Current suit/color, Any active rules affecting play */
+  public boolean hasValidMove(Card topCard){
+    for (Card card : hand){//Look through the player’s hand. 
+      if (card.matches(topCard)){ //Needs to check: Top card on discard pile, Current suit/color, Any active rules affecting
+        return true;
+      }
+    }
+    return false;
   }
 }
