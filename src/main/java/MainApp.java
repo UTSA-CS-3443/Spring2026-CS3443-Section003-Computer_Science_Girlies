@@ -10,7 +10,7 @@ public class MainApp extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/main_menu.fxml"));
         Scene scene = new Scene(loader.load());
 
-        stage.setTitle("Color Match Card Game");
+        stage.setTitle("Color & Number Match Card Game");
         stage.setScene(scene);
         stage.show();
     }
