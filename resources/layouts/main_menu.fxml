@@ -12,7 +12,7 @@
              -fx-background-size: cover;
              -fx-background-position: center;">
 
-    <Text text="Color Match Game"
+    <Text text="Color & Number Match Card Game"
           style="-fx-font-size: 32px; -fx-fill: white;" />
 
     <Button text="Play Game"
