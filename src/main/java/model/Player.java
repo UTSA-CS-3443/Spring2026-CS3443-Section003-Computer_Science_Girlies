@@ -10,10 +10,17 @@ public class Player {
     pick a car that card that gets played would then get removed from the List, 
     return the card as the card played;*/
   }
-  public void drawCard(){
+  public void drawCard(Deck deck){
     // This card needs to read the deck
+    Card drawnCard = deck.drawCard(deck);
     //add a card to ArrayList<Card> hand
-    //return either the drawn card or nothing since deck would manage externally*/
+    //return either the drawn card or nothing since if deck is empty
+    if (drawnCard != null){
+      hand.add(drawnCard);
+    }
+    else {
+      System.out.println("The deck is empty. We cannot draw a Card.");
+    }
 
   }
   public boolean hasValidMove(){
