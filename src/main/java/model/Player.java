@@ -5,10 +5,19 @@ public class Player {
   ArrayList<Card> hand;
   boolean isBot;
 
-  public Card playCard(ArrayList<Card> hand, ){
-    /*I need to read the hand of the player, 
-    pick a car that card that gets played would then get removed from the List, 
-    return the card as the card played;*/
+  public Card playCard(Card TopCard){
+    for (int i = 0; i < hand.size; i++){
+      Card current = hand.get(i); //I need to read the hand of the player, 
+
+      if (current.matches(topCard)){
+        hand.remove(i); //pick a car that card that gets played would then get removed from the List, 
+        return current; //return the card as the card played;
+      }
+    }
+    
+    
+    
+    return null;
   }
   public void drawCard(Deck deck){
     // This card needs to read the deck
