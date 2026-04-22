@@ -65,6 +65,13 @@ public class Game {
     }
     public boolean isValidMove(){
         /* Looks at card the player played and then discard pile and checks to make sure they match either number or color */
-        
+        Card played = player.playCard();//Looks at card the player played
+        Card topCard = discardPile.peek();//then discard pile
+        for (Card card : player.hand.length()){/*Look through the player’s hand. */
+            player.hand(i);
+            if (played.matches(topCard)){//checks to make sure they match either number or color
+                return true;
+        }
+       }
     }
 }
