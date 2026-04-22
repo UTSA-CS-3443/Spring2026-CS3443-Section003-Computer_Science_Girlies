@@ -50,11 +50,17 @@ public class Game {
         }
         else {
             System.out.println(player.name() + " has no valid move.");
+            player.drawCard(deck);
         }
-
+        nextTurn();
     }
-    public boolean checkWinner(){
+    public Player checkWinner(){
         /* Check player's hand is empty */
+        for (Player player : players){
+            if(player.hand.isEmpty()){
+                return player;
+            }
+        }
 
     }
     public boolean isValidMove(){
