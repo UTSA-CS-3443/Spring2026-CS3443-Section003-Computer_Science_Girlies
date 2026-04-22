@@ -1,1 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.LobbyController"
+      alignment="CENTER"
+      spacing="20"
+      style="-fx-background-image: url('/images/background.png');
+             -fx-background-size: cover;
+             -fx-background-position: center;">
+
+    <Text text="Game Lobby"
+          style="-fx-font-size: 28px; -fx-fill: white;" />
+
+    <Text text="Username: Player1"
+          style="-fx-fill: white;" />
+
+    <Text text="Level: 1"
+          style="-fx-fill: white;" />
+
+    <Button text="Invite Friend"
+            onAction="#handleInvite"
+            prefWidth="200"/>
+
+    <Button text="Start Game"
+            onAction="#handleStartGame"
+            prefWidth="200"/>
+
+    <Button text="Leave Lobby"
+            onAction="#handleLeaveLobby"
+            prefWidth="200"/>
+
+</VBox>
