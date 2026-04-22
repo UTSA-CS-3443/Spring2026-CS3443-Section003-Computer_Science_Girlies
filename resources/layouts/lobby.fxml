@@ -15,7 +15,7 @@
     <Text text="Game Lobby"
           style="-fx-font-size: 28px; -fx-fill: white;" />
 
-    <Text text="Username: Player1"
+    <Text text="Username: abc123"
           style="-fx-fill: white;" />
 
     <Text text="Level: 1"
