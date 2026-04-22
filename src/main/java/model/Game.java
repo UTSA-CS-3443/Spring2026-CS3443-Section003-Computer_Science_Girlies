@@ -37,7 +37,7 @@ public class Game {
 
     }
     public void playTurn(){
-        /* */
+        
         Player player = getCurrentPlayer(); 
         Card topCard = discardPile.peek();
         System.out.println(player.name() + "'s turn. Top card: " + topCard);
@@ -71,7 +71,7 @@ public class Game {
             player.hand(i);
             if (played.matches(topCard)){//checks to make sure they match either number or color
                 return true;
+            }
         }
-       }
     }
 }
