@@ -1,1 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.SettingsController"
+      alignment="CENTER"
+      spacing="15"
+      style="-fx-background-image: url('/images/background.png');
+             -fx-background-size: cover;
+             -fx-background-position: center;">
+
+    <Text text="Settings"
+          style="-fx-font-size: 28px; -fx-fill: white;" />
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Language:" style="-fx-text-fill: white;"/>
+        <ComboBox fx:id="languageBox">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="English"/>
+                    <String fx:value="Spanish"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Controls:" style="-fx-text-fill: white;"/>
+        <ComboBox fx:id="controlsBox">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Keyboard"/>
+                    <String fx:value="Mouse"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Appearance:" style="-fx-text-fill: white;"/>
+        <ComboBox fx:id="appearanceBox">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Light"/>
+                    <String fx:value="Dark"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Resolution:" style="-fx-text-fill: white;"/>
+        <ComboBox fx:id="resolutionBox">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="1920x1080"/>
+                    <String fx:value="1280x720"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Display Mode:" style="-fx-text-fill: white;"/>
+        <ComboBox fx:id="displayModeBox">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Fullscreen"/>
+                    <String fx:value="Windowed"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+    </HBox>
+
+    <HBox spacing="20" alignment="CENTER">
+        <CheckBox fx:id="musicCheck" text="Music" style="-fx-text-fill: white;"/>
+        <CheckBox fx:id="sfxCheck" text="Sound Effects" style="-fx-text-fill: white;"/>
+    </HBox>
+
+    <CheckBox fx:id="colorblindCheck"
+              text="Colorblind Mode"
+              style="-fx-text-fill: white;"/>
+
+    <HBox spacing="15" alignment="CENTER">
+        <Button text="Save"
+                onAction="#handleSave"
+                prefWidth="100"/>
+
+        <Button text="Back"
+                onAction="#handleBack"
+                prefWidth="100"/>
+    </HBox>
+
+</VBox>
