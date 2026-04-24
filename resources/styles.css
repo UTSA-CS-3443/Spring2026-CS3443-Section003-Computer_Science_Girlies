@@ -1,1 +1,41 @@
+/* Background */
+.root {
+    -fx-background-image: url('/images/background.png');
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
 
+/* Title Text */
+.title-text {
+    -fx-font-size: 32px;
+    -fx-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Normal Text */
+.body-text {
+    -fx-font-size: 16px;
+    -fx-fill: white;
+}
+
+/* Buttons */
+.menu-button {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-text-fill: black;
+    -fx-font-size: 16px;
+    -fx-background-radius: 20;
+    -fx-padding: 10 20;
+}
+
+/* Button hover effect */
+.menu-button:hover {
+    -fx-background-color: white;
+}
+
+/* Card-style buttons (for game screen later) */
+.card-button {
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
