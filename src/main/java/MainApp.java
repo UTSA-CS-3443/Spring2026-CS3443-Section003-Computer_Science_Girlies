@@ -10,9 +10,12 @@ public class MainApp extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/main_menu.fxml"));
         Scene scene = new Scene(loader.load());
 
+        scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
+
         stage.setTitle("Color & Number Match Card Game");
         stage.setScene(scene);
         stage.show();
+
     }
 
     public static void main(String[] args) {
