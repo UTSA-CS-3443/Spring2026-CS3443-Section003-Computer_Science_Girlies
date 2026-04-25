@@ -23,6 +23,7 @@
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="English"/>
                     <String fx:value="Spanish"/>
+                    <String fx:value="French"/>
                 </FXCollections>
             </items>
         </ComboBox>
