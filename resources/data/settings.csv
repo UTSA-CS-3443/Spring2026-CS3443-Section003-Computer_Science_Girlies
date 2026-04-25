@@ -1,5 +1,5 @@
 Setting,Type,Value,Options
-language,choice,English,English;Spanish;French;German;Japanese
+language,choice,English,English;Spanish;French
 controls,choice,Keyboard,Keyboard;Mouse;Controller
 appearance,choice,Light,Light;Dark;Auto
 resolution,choice,1920x1080,1920x1080;1280x720;800x600;2560x1440
