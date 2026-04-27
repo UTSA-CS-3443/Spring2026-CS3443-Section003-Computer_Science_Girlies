@@ -7,8 +7,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public String filePath = "settings.csv";
+
 public class SettingsController{
+    public String filePath = "settings.csv";
     @fxml private ComboBox<String> launguageBox;
     @fxml private ComboBox<String> controlsBox;
     @fxml private ComboBox<String> appearanceBox;
@@ -40,7 +41,8 @@ public class SettingsController{
         Skips the header row
         Parses each line into a structured setting object
         Stores all settings in a collection (like a map using keys such as "language", "music", etc.) */
-        try (BufferedReader settings = new BufferedReader("settings.csv")){
+        String filePath = "settings.csv";
+        try (BufferedReader settings = new BufferedReader(filePath)){
             String file;
             settings.readLine();
 
