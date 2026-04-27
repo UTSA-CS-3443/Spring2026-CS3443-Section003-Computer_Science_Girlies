@@ -19,6 +19,7 @@ public class SettingsController{
         Parses each line into a structured setting object
         Stores all settings in a collection (like a map using keys such as "language", "music", etc.) */
         String filePath = "settings.csv";
+        
     }
     private void setupComboBox(ComboBox<String> box, String settingKey){
         /* Takes a ComboBox and a setting key (like "language")
