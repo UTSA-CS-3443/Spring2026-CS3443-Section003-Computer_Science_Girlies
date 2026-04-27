@@ -1,3 +1,11 @@
+import java.io.IOException;
+import javafx.scene.Node;
+import org.w3c.dom.Node;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 public class SettingsController{
     public void initailize(){
         /* Calls the method that loads settings from the CSV
