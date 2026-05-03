@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="edu.utsa.cs3443.project_demo.controller.HowToPlayController"
+           prefWidth="900"
+           prefHeight="600">
+
+    <ImageView fitWidth="900"
+               fitHeight="600"
+               preserveRatio="false">
+        <image>
+            <Image url="@../images/background.png"/>
+        </image>
+    </ImageView>
+
+    <AnchorPane prefWidth="900"
+                prefHeight="600">
+
+        <Button text="Back to Main Menu"
+                onAction="#handleBack"
+                layoutX="30"
+                layoutY="25"
+                prefWidth="170"
+                prefHeight="35"
+                style="-fx-font-size: 14px;
+                       -fx-background-radius: 12;
+                       -fx-background-color: white;
+                       -fx-text-fill: black;
+                       -fx-font-weight: bold;" />
+
+        <Text text="How to Play"
+              layoutX="390"
+              layoutY="55"
+              style="-fx-font-size: 22px;
+                     -fx-fill: white;
+                     -fx-font-family: 'Arial Rounded MT Bold';" />
+
+        <VBox layoutX="45"
+              layoutY="95"
+              spacing="20"
+              prefWidth="420">
+
+            <Text wrappingWidth="420"
+                  text="Objective:&#10;Be the first player to get rid of all the cards in your hand."
+                  style="-fx-font-size: 14px;
+                         -fx-fill: white;
+                         -fx-font-family: 'Arial Rounded MT Bold';" />
+
+            <Text wrappingWidth="420"
+                  text="Game Setup:&#10;Each player starts with a set of cards. One card is placed face up in the center as the discard pile, and the remaining cards form the draw pile."
+                  style="-fx-font-size: 14px;
+                         -fx-fill: white;
+                         -fx-font-family: 'Arial Rounded MT Bold';" />
+
+            <Text wrappingWidth="420"
+                  text="Taking Your Turn:&#10;On your turn, play a card from your hand that matches the color or number of the card on the discard pile."
+                  style="-fx-font-size: 14px;
+                         -fx-fill: white;
+                         -fx-font-family: 'Arial Rounded MT Bold';" />
+
+            <Text wrappingWidth="420"
+                  text="Example:&#10;If the card on the discard pile is a red 5, you may play:&#10;• Any red card&#10;• Any 5 card"
+                  style="-fx-font-size: 14px;
+                         -fx-fill: white;
+                         -fx-font-family: 'Arial Rounded MT Bold';" />
+
+        </VBox>
+
+        <VBox layoutX="520"
+              layoutY="95"
+              spacing="20"
+              prefWidth="330">
+
+            <Text wrappingWidth="330"
+                  text="No Matching Card?&#10;If you cannot play a card, you must draw one card from the draw pile. If the card you draw is playable, you may play it immediately."
+                  style="-fx-font-size: 14px;
+                         -fx-fill: white;
+                         -fx-font-family: 'Arial Rounded MT Bold';" />
+
+            <Text wrappingWidth="330"
+                  text="Action Cards:&#10;These cards can change the flow of the game:&#10;&#10;• Skip — The next player loses their turn.&#10;• Reverse — The order of play changes direction.&#10;• Draw Cards — The next player draws extra cards."
+                  style="-fx-font-size: 14px;
+                         -fx-fill: white;
+                         -fx-font-family: 'Arial Rounded MT Bold';" />
+
+            <HBox spacing="16"
+                  alignment="CENTER"
+                  prefWidth="330">
+
+                <ImageView fitWidth="70" fitHeight="100" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/cards/card_red_skip.png" />
+                    </image>
+                </ImageView>
+
+                <ImageView fitWidth="70" fitHeight="100" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/cards/card_yellow_reverse.png" />
+                    </image>
+                </ImageView>
+
+                <ImageView fitWidth="70" fitHeight="100" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/cards/card_green_draw2.png" />
+                    </image>
+                </ImageView>
+
+            </HBox>
+
+            <Text wrappingWidth="330"
+                  text="Winning the Game:&#10;The first player to play all their cards wins the round."
+                  style="-fx-font-size: 14px;
+                         -fx-fill: white;
+                         -fx-font-family: 'Arial Rounded MT Bold';" />
+
+        </VBox>
+
+    </AnchorPane>
+
+</StackPane>

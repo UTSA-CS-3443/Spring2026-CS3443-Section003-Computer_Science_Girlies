@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="edu.utsa.cs3443.project_demo.controller.MenuController"
+           prefWidth="900"
+           prefHeight="600">
+
+    <!-- Background -->
+    <ImageView fitWidth="900"
+               fitHeight="600"
+               preserveRatio="false">
+        <image>
+            <Image url="@../images/main_menu_background.png"/>
+        </image>
+    </ImageView>
+
+    <!-- FULL-WIDTH OVERLAY -->
+    <VBox alignment="CENTER"
+          spacing="22"
+          prefWidth="900"
+          prefHeight="600"
+          style="-fx-background-color: rgba(0, 0, 0, 0.35);">
+
+        <!-- CONTENT CARD -->
+        <VBox alignment="CENTER"
+              spacing="22"
+              style="-fx-padding: 45;">
+
+            <Text text="Color &amp; Number Match Card Game"
+                  wrappingWidth="600"
+                  textAlignment="CENTER"
+                  style="-fx-font-size: 50px;
+                         -fx-fill: white;
+                         -fx-font-family: 'Arial Rounded MT Bold';
+                         -fx-font-weight: bold;" />
+
+            <Button text="Play Game"
+                    onAction="#handlePlayGame"
+                    prefWidth="250"
+                    prefHeight="48"
+                    style="-fx-font-size: 18px;
+                           -fx-background-radius: 25;
+                           -fx-background-color: white;
+                           -fx-text-fill: #1d4ed8;
+                           -fx-font-weight: bold;" />
+
+            <Button text="How To Play"
+                    onAction="#handleHowToPlay"
+                    prefWidth="250"
+                    prefHeight="48"
+                    style="-fx-font-size: 18px;
+                           -fx-background-radius: 25;
+                           -fx-background-color: white;
+                           -fx-text-fill: #1d4ed8;
+                           -fx-font-weight: bold;" />
+
+            <Button text="Settings"
+                    onAction="#handleSettings"
+                    prefWidth="250"
+                    prefHeight="48"
+                    style="-fx-font-size: 18px;
+                           -fx-background-radius: 25;
+                           -fx-background-color: white;
+                           -fx-text-fill: #1d4ed8;
+                           -fx-font-weight: bold;" />
+
+        </VBox>
+
+    </VBox>
+
+</StackPane>

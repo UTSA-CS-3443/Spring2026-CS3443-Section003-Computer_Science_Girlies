@@ -1,0 +1,22 @@
+Model class name ideas
+
+Think: “What represents the game’s data and rules?”
+CardMatchModel
+    This file checks if cards are marching
+NumberColorMatchModel
+    This file checks arraylists  numbers and collors. ArrayList<Number, Color>
+MatchingGameState
+
+Variables:
+- GameState → tracks score, turns, matches
+- Card → represents a single card (number + color)
+ArrayList<Card> cards = new ArrayList<>();
+cards.add(new Card(number, color)); //int number, String Card cards.add(new Card(2, "Blue"));
+- Deck = holds all cards //starts at 0 int deck;
+
+Controller class name ideas
+
+Think: “What handles user clicks and game flow?”
+- GameController
+- MatchGameController
+- NumberColorController
