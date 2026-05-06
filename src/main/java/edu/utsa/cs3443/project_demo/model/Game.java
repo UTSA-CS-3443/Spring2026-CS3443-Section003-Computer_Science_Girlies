@@ -40,7 +40,6 @@ public class Game {
         Card firstCard = deck.drawCard();
 
         while (firstCard != null && isActionCard(firstCard)) {
-            deck.drawCard();
             firstCard = deck.drawCard();
         }
 
@@ -76,11 +75,37 @@ public class Game {
 
                 applyActionCard(played);
             }
+
         } else {
             System.out.println(player.getName() + " has no valid move. Drawing card...");
             player.drawCard(deck);
             nextTurn();
         }
+    }
+
+    // Play human card
+    public boolean playHumanCard(Player player, Card card) {
+
+        if (player == null || card == null) {
+            return false;
+        }
+
+        if (player != getCurrentPlayer()) {
+            return false;
+        }
+
+        Card topCard = getTopCard();
+
+        if (!card.matches(topCard)) {
+            return false;
+        }
+
+        player.removeCard(card);
+        discardPile.push(card);
+
+        applyActionCard(card);
+
+        return true;
     }
 
     // Apply action card effects
@@ -130,7 +155,8 @@ public class Game {
     // Check winner
     public Player checkWinner() {
         for (Player player : players) {
-            if (player.getHand().isEmpty()) {
+
+            if (player.hasWon()) {
                 return player;
             }
         }
@@ -145,6 +171,11 @@ public class Game {
 
     // Get top card
     public Card getTopCard() {
+
+        if (discardPile.isEmpty()) {
+            return null;
+        }
+
         return discardPile.peek();
     }
 
@@ -161,5 +192,10 @@ public class Game {
     // Get direction
     public int getDirection() {
         return direction;
+    }
+
+    // Get current player index
+    public int getCurrentPlayerIndex() {
+        return currentPlayerIndex;
     }
 }
