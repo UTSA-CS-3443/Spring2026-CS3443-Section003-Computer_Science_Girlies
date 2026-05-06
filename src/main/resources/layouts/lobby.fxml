@@ -106,10 +106,15 @@
               spacing="28"
               alignment="CENTER">
 
+            <!-- Player 1 -->
             <VBox alignment="CENTER"
                   spacing="10">
-                <Text text="Player 1"
-                      style="-fx-font-size: 22px; -fx-fill: white; -fx-font-family: 'Arial Rounded MT Bold';" />
+
+                <Text fx:id="player1Label"
+                      text="Player 1"
+                      style="-fx-font-size: 22px;
+                             -fx-fill: white;
+                             -fx-font-family: 'Arial Rounded MT Bold';" />
 
                 <StackPane prefWidth="150"
                            prefHeight="205"
@@ -118,18 +123,26 @@
                                   -fx-border-color: #1f2937;
                                   -fx-border-radius: 8;
                                   -fx-border-width: 1;">
+
                     <Ellipse radiusX="58"
                              radiusY="88"
                              fill="white" />
+
                     <Text text="👤"
                           style="-fx-font-size: 60px;" />
+
                 </StackPane>
             </VBox>
 
+            <!-- Player 2 -->
             <VBox alignment="CENTER"
                   spacing="10">
-                <Text text="Player 2"
-                      style="-fx-font-size: 22px; -fx-fill: white; -fx-font-family: 'Arial Rounded MT Bold';" />
+
+                <Text fx:id="player2Label"
+                      text="Bot 2"
+                      style="-fx-font-size: 22px;
+                             -fx-fill: white;
+                             -fx-font-family: 'Arial Rounded MT Bold';" />
 
                 <StackPane prefWidth="150"
                            prefHeight="205"
@@ -138,18 +151,26 @@
                                   -fx-border-color: #1f2937;
                                   -fx-border-radius: 8;
                                   -fx-border-width: 1;">
+
                     <Ellipse radiusX="58"
                              radiusY="88"
                              fill="white" />
+
                     <Text text="👤"
                           style="-fx-font-size: 60px;" />
+
                 </StackPane>
             </VBox>
 
+            <!-- Player 3 -->
             <VBox alignment="CENTER"
                   spacing="10">
-                <Text text="Player 3"
-                      style="-fx-font-size: 22px; -fx-fill: white; -fx-font-family: 'Arial Rounded MT Bold';" />
+
+                <Text fx:id="player3Label"
+                      text="Bot 3"
+                      style="-fx-font-size: 22px;
+                             -fx-fill: white;
+                             -fx-font-family: 'Arial Rounded MT Bold';" />
 
                 <StackPane prefWidth="150"
                            prefHeight="205"
@@ -158,18 +179,26 @@
                                   -fx-border-color: #1f2937;
                                   -fx-border-radius: 8;
                                   -fx-border-width: 1;">
+
                     <Ellipse radiusX="58"
                              radiusY="88"
                              fill="white" />
+
                     <Text text="👤"
                           style="-fx-font-size: 60px;" />
+
                 </StackPane>
             </VBox>
 
+            <!-- Player 4 -->
             <VBox alignment="CENTER"
                   spacing="10">
-                <Text text="Player 4"
-                      style="-fx-font-size: 22px; -fx-fill: white; -fx-font-family: 'Arial Rounded MT Bold';" />
+
+                <Text fx:id="player4Label"
+                      text="Bot 4"
+                      style="-fx-font-size: 22px;
+                             -fx-fill: white;
+                             -fx-font-family: 'Arial Rounded MT Bold';" />
 
                 <StackPane prefWidth="150"
                            prefHeight="205"
@@ -178,11 +207,14 @@
                                   -fx-border-color: #1f2937;
                                   -fx-border-radius: 8;
                                   -fx-border-width: 1;">
+
                     <Ellipse radiusX="58"
                              radiusY="88"
                              fill="white" />
+
                     <Text text="👤"
                           style="-fx-font-size: 60px;" />
+
                 </StackPane>
             </VBox>
 
