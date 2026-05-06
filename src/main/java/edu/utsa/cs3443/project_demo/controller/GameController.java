@@ -33,14 +33,20 @@ public class GameController {
 
     private Game game;
 
+    private static int humanPlayerCount = 1;
+
+    public static void setHumanPlayerCount(int count) {
+        humanPlayerCount = count;
+    }
+
     @FXML
     public void initialize() {
         game = new Game();
 
-        game.addPlayer(new Player("Player 1", false));
-        game.addPlayer(new Player("Player 2", true));
-        game.addPlayer(new Player("Player 3", true));
-        game.addPlayer(new Player("Player 4", true));
+        for (int i = 1; i <= 4; i++) {
+            boolean isBot = i > humanPlayerCount;
+            game.addPlayer(new Player("Player " + i, isBot));
+        }
 
         game.startGame();
 
@@ -99,8 +105,12 @@ public class GameController {
         turnLabel.setText(currentPlayer.getName() + "'s Turn");
 
         updateTopCard();
-        updatePlayerHand(game.getPlayers().get(0));
         updateOtherPlayerHands();
+        if (!currentPlayer.isBot()) {
+            updatePlayerHand(currentPlayer);
+        } else {
+            handContainer.getChildren().clear();
+        }
 
         boolean isHumanTurn = !currentPlayer.isBot();
         drawButton.setDisable(!isHumanTurn);
