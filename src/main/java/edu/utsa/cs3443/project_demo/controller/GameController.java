@@ -38,9 +38,9 @@ public class GameController {
         game = new Game();
 
         game.addPlayer(new Player("Player 1", false));
-        game.addPlayer(new Player("Bot 2", true));
-        game.addPlayer(new Player("Bot 3", true));
-        game.addPlayer(new Player("Bot 4", true));
+        game.addPlayer(new Player("Player 2", true));
+        game.addPlayer(new Player("Player 3", true));
+        game.addPlayer(new Player("Player 4", true));
 
         game.startGame();
 
