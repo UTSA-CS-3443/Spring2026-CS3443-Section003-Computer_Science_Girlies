@@ -26,7 +26,8 @@
     <AnchorPane prefWidth="900"
                 prefHeight="600">
 
-        <Button text="Back to Main Menu"
+        <Button fx:id="backButton"
+                text="Back to Main Menu"
                 onAction="#handleBack"
                 layoutX="30"
                 layoutY="25"
@@ -38,63 +39,103 @@
                        -fx-text-fill: black;
                        -fx-font-weight: bold;" />
 
-        <Text text="Settings"
-              layoutX="410"
+        <Text fx:id="settingsTitle"
+              text="Settings"
+              layoutX="405"
               layoutY="55"
-              style="-fx-font-size: 24px;
+              style="-fx-font-size: 28px;
                      -fx-fill: white;
                      -fx-font-family: 'Arial Rounded MT Bold';" />
 
+        <Label text="Language"
+               layoutX="235"
+               layoutY="75"
+               style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" />
+
         <ComboBox fx:id="languageBox"
                   layoutX="235"
-                  layoutY="85"
+                  layoutY="95"
                   prefWidth="430"
-                  prefHeight="45"
+                  prefHeight="38"
                   style="-fx-background-radius: 12;" />
+
+        <Label text="Controls"
+               layoutX="235"
+               layoutY="140"
+               style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" />
 
         <ComboBox fx:id="controlsBox"
                   layoutX="235"
-                  layoutY="150"
+                  layoutY="160"
                   prefWidth="430"
-                  prefHeight="45"
+                  prefHeight="38"
                   style="-fx-background-radius: 12;" />
+
+        <Label text="Appearance"
+               layoutX="235"
+               layoutY="205"
+               style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" />
 
         <ComboBox fx:id="appearanceBox"
                   layoutX="235"
-                  layoutY="215"
+                  layoutY="225"
                   prefWidth="430"
-                  prefHeight="45"
+                  prefHeight="38"
                   style="-fx-background-radius: 12;" />
+
+        <Label text="Resolution"
+               layoutX="235"
+               layoutY="270"
+               style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" />
 
         <ComboBox fx:id="resolutionBox"
                   layoutX="235"
-                  layoutY="280"
+                  layoutY="290"
                   prefWidth="430"
-                  prefHeight="45"
+                  prefHeight="38"
+                  style="-fx-background-radius: 12;" />
+
+        <Label text="Display Mode"
+               layoutX="235"
+               layoutY="335"
+               style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" />
+
+        <ComboBox fx:id="displayModeBox"
+                  layoutX="235"
+                  layoutY="355"
+                  prefWidth="430"
+                  prefHeight="38"
                   style="-fx-background-radius: 12;" />
 
         <CheckBox fx:id="musicCheck"
                   layoutX="235"
-                  layoutY="350"
+                  layoutY="415"
                   text="Music"
                   style="-fx-text-fill: white; -fx-font-size: 16px;" />
 
         <CheckBox fx:id="sfxCheck"
                   layoutX="235"
-                  layoutY="410"
+                  layoutY="455"
                   text="Sound Effects"
                   style="-fx-text-fill: white; -fx-font-size: 16px;" />
 
         <CheckBox fx:id="colorblindCheck"
                   layoutX="235"
-                  layoutY="470"
+                  layoutY="495"
                   text="Colorblind Mode"
                   style="-fx-text-fill: white; -fx-font-size: 16px;" />
 
-        <!-- Hidden, kept for SettingsController compatibility -->
-        <ComboBox fx:id="displayModeBox"
-                  visible="false"
-                  managed="false" />
+        <Button text="Save Settings"
+                onAction="#handleSave"
+                layoutX="365"
+                layoutY="535"
+                prefWidth="170"
+                prefHeight="38"
+                style="-fx-font-size: 14px;
+                       -fx-background-radius: 12;
+                       -fx-background-color: white;
+                       -fx-text-fill: black;
+                       -fx-font-weight: bold;" />
 
     </AnchorPane>
 
