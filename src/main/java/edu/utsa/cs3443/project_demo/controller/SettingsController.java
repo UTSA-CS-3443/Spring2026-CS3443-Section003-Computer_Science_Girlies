@@ -100,7 +100,67 @@ public class SettingsController {
     public void handleSave(ActionEvent event) {
         updateSettings();
         saveToCSV();
-        System.out.println("Settings saved.");
+        applySettings(event);
+        System.out.println("Settings saved and applied.");
+    }
+
+    private void applySettings(ActionEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        String appearance = settingsMap.get("appearance").getValue();
+        String resolution = settingsMap.get("resolution").getValue();
+        String displayMode = settingsMap.get("displayMode").getValue();
+
+        applyAppearance(stage.getScene(), appearance);
+        applyResolution(stage, resolution);
+        applyDisplayMode(stage, displayMode);
+    }
+
+    private void applyAppearance(Scene scene, String appearance) {
+        Parent root = scene.getRoot();
+
+        if (appearance.equalsIgnoreCase("Dark")) {
+            root.setStyle("-fx-background-color: #1e1e1e;");
+        } else {
+            root.setStyle("-fx-background-color: #f5f5f5;");
+        }
+    }
+
+    private void applyResolution(Stage stage, String resolution) {
+        if (resolution == null || !resolution.contains("x")) {
+            return;
+        }
+
+        String[] parts = resolution.toLowerCase().split("x");
+
+        try {
+            double width = Double.parseDouble(parts[0].trim());
+            double height = Double.parseDouble(parts[1].trim());
+
+            stage.setWidth(width);
+            stage.setHeight(height);
+            stage.centerOnScreen();
+
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid resolution: " + resolution);
+        }
+    }
+
+    private void applyDisplayMode(Stage stage, String displayMode) {
+        if (displayMode == null) {
+            return;
+        }
+
+        if (displayMode.equalsIgnoreCase("Fullscreen")) {
+            stage.setFullScreen(true);
+            stage.setMaximized(false);
+        } else if (displayMode.equalsIgnoreCase("Windowed")) {
+            stage.setFullScreen(false);
+            stage.setMaximized(false);
+        } else if (displayMode.equalsIgnoreCase("Maximized")) {
+            stage.setFullScreen(false);
+            stage.setMaximized(true);
+        }
     }
 
     public void updateSettings() {
@@ -149,13 +209,9 @@ public class SettingsController {
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            Scene scene = new Scene(root, 900, 600);
+            Scene scene = new Scene(root, stage.getWidth(), stage.getHeight());
 
             stage.setScene(scene);
-            stage.setResizable(false);
-            stage.setMaximized(false);
-            stage.setWidth(900);
-            stage.setHeight(600);
             stage.centerOnScreen();
 
         } catch (IOException e) {
