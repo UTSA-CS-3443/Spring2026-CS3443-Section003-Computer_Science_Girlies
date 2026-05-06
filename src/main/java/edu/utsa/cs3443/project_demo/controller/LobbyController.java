@@ -47,7 +47,12 @@ public class LobbyController {
 
     @FXML
     private void handleStartGame(ActionEvent event) {
-        // Fill empty player slots with bots only when the game starts
+        int humanPlayerCount = lobby.getPlayerCount();
+
+        // Tell GameController how many real players were added in the lobby
+        GameController.setHumanPlayerCount(humanPlayerCount);
+
+        // Fill empty player slots with bots only for display in the lobby
         while (lobby.getPlayerCount() < 4) {
             lobby.addPlayer("Bot " + (lobby.getPlayerCount() + 1));
         }
