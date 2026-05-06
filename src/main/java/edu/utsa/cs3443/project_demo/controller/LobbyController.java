@@ -12,11 +12,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.scene.text.Text;
 
 public class LobbyController {
 
     @FXML private TextField playerNameField;
     @FXML private TextArea playerListArea;
+    @FXML private Text player1Label;
+    @FXML private Text player2Label;
+    @FXML private Text player3Label;
+    @FXML private Text player4Label;
 
     private Lobby lobby;
 
@@ -77,6 +82,11 @@ public class LobbyController {
                 playerListArea.appendText(player + "\n");
             }
         }
+
+        player1Label.setText("Player 1");
+        player2Label.setText(lobby.getPlayerCount() >= 2 ? "Player 2" : "Bot 2");
+        player3Label.setText(lobby.getPlayerCount() >= 3 ? "Player 3" : "Bot 3");
+        player4Label.setText(lobby.getPlayerCount() >= 4 ? "Player 4" : "Bot 4");
     }
 
     private void switchScene(ActionEvent event, String fxmlPath) {
