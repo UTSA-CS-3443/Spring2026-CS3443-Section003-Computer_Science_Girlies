@@ -17,11 +17,9 @@
     <ImageView fitWidth="900"
                fitHeight="600"
                preserveRatio="false">
-
         <image>
             <Image url="@../images/background.png"/>
         </image>
-
     </ImageView>
 
     <AnchorPane prefWidth="900"
@@ -30,9 +28,11 @@
         <!-- Turn Label -->
         <Text fx:id="turnLabel"
               text="Your Turn"
-              layoutX="40"
-              layoutY="545"
-              style="-fx-font-size: 28px;
+              layoutX="25"
+              layoutY="555"
+              wrappingWidth="230"
+              textAlignment="CENTER"
+              style="-fx-font-size: 22px;
                      -fx-fill: white;
                      -fx-font-family: 'Arial Rounded MT Bold';" />
 
@@ -51,16 +51,14 @@
                       -fx-font-size: 18px;
                       -fx-font-weight: bold;" />
 
-        <ImageView layoutX="145"
+        <ImageView layoutX="75"
                    layoutY="155"
                    fitWidth="60"
                    fitHeight="60"
                    preserveRatio="true">
-
             <image>
                 <Image url="@../images/profile_icon.png"/>
             </image>
-
         </ImageView>
 
         <!-- Player 3 -->
@@ -83,11 +81,9 @@
                    fitWidth="60"
                    fitHeight="60"
                    preserveRatio="true">
-
             <image>
                 <Image url="@../images/profile_icon.png"/>
             </image>
-
         </ImageView>
 
         <!-- Player 4 -->
@@ -110,11 +106,9 @@
                    fitWidth="60"
                    fitHeight="60"
                    preserveRatio="true">
-
             <image>
                 <Image url="@../images/profile_icon.png"/>
             </image>
-
         </ImageView>
 
         <!-- Draw Button -->
@@ -122,9 +116,9 @@
                 text="Draw Card"
                 onAction="#handleDrawCard"
                 layoutX="235"
-                layoutY="255"
+                layoutY="95"
                 prefWidth="120"
-                prefHeight="70"
+                prefHeight="60"
                 style="-fx-background-radius: 15;
                        -fx-background-color: black;
                        -fx-text-fill: white;
@@ -134,7 +128,7 @@
         <!-- Top Card -->
         <Button fx:id="topCardDisplay"
                 layoutX="395"
-                layoutY="215"
+                layoutY="245"
                 prefWidth="120"
                 prefHeight="170"
                 style="-fx-background-color: transparent;" />
