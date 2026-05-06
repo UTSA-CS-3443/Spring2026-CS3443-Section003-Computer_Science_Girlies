@@ -81,21 +81,17 @@ public class GameController {
 
     private void handlePlayCard(Card card) {
         Player currentPlayer = game.getCurrentPlayer();
-        Card topCard = game.getTopCard();
 
         if (currentPlayer.isBot()) {
             return;
         }
 
-        if (card.matches(topCard)) {
-            currentPlayer.getHand().remove(card);
-            game.getDiscardPile().push(card);
+        boolean cardWasPlayed = game.playHumanCard(currentPlayer, card);
 
-            game.applyActionCard(card);
-
+        if (cardWasPlayed) {
             runBotTurns();
         } else {
-            System.out.println("Invalid move: " + card + " does not match " + topCard);
+            System.out.println("Invalid move: " + card + " does not match " + game.getTopCard());
         }
     }
 
