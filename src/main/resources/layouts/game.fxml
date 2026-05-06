@@ -10,70 +10,36 @@
 <?import javafx.scene.text.Text?>
 
 <StackPane xmlns:fx="http://javafx.com/fxml"
-           fx:controller="edu.utsa.cs3443.project_demo.controller.GameController">
+           fx:controller="edu.utsa.cs3443.project_demo.controller.GameController"
+           prefWidth="900"
+           prefHeight="600">
 
-    <ImageView fitWidth="900" fitHeight="600" preserveRatio="false">
+    <ImageView fitWidth="900"
+               fitHeight="600"
+               preserveRatio="false">
+
         <image>
             <Image url="@../images/background.png"/>
         </image>
+
     </ImageView>
 
-    <AnchorPane maxWidth="Infinity" maxHeight="Infinity">
+    <AnchorPane prefWidth="900"
+                prefHeight="600">
 
+        <!-- Turn Label -->
         <Text fx:id="turnLabel"
               text="Your Turn"
-              layoutX="55"
-              layoutY="525"
-              style="-fx-font-size: 30px;
+              layoutX="40"
+              layoutY="545"
+              style="-fx-font-size: 28px;
                      -fx-fill: white;
                      -fx-font-family: 'Arial Rounded MT Bold';" />
 
-        <Label text="Player 2"
-               layoutX="40"
-               layoutY="105"
-               prefWidth="150"
-               prefHeight="35"
-               alignment="CENTER"
-               style="-fx-background-color: white;
-                      -fx-background-radius: 12;
-                      -fx-border-color: black;
-                      -fx-border-radius: 12;
-                      -fx-font-size: 18px;" />
-
-        <ImageView layoutX="180"
-                   layoutY="150"
-                   fitWidth="55"
-                   fitHeight="55"
-                   preserveRatio="true">
-            <image>
-                <Image url="@../images/profile_icon.png"/>
-            </image>
-        </ImageView>
-
-        <Label text="Player 3"
-               layoutX="465"
-               layoutY="35"
-               prefWidth="150"
-               prefHeight="35"
-               alignment="CENTER"
-               style="-fx-background-color: white;
-                      -fx-background-radius: 12;
-                      -fx-border-color: black;
-                      -fx-border-radius: 12;
-                      -fx-font-size: 18px;" />
-
-        <ImageView layoutX="580"
-                   layoutY="80"
-                   fitWidth="55"
-                   fitHeight="55"
-                   preserveRatio="true">
-            <image>
-                <Image url="@../images/profile_icon.png"/>
-            </image>
-        </ImageView>
-
-        <Label text="Player 4"
-               layoutX="720"
+        <!-- Player 2 -->
+        <Label fx:id="player2Label"
+               text="Player 2"
+               layoutX="45"
                layoutY="110"
                prefWidth="150"
                prefHeight="35"
@@ -82,72 +48,141 @@
                       -fx-background-radius: 12;
                       -fx-border-color: black;
                       -fx-border-radius: 12;
-                      -fx-font-size: 18px;" />
+                      -fx-font-size: 18px;
+                      -fx-font-weight: bold;" />
 
-        <ImageView layoutX="815"
-                   layoutY="160"
-                   fitWidth="55"
-                   fitHeight="55"
+        <ImageView layoutX="145"
+                   layoutY="155"
+                   fitWidth="60"
+                   fitHeight="60"
                    preserveRatio="true">
+
             <image>
                 <Image url="@../images/profile_icon.png"/>
             </image>
+
         </ImageView>
 
+        <!-- Player 3 -->
+        <Label fx:id="player3Label"
+               text="Player 3"
+               layoutX="375"
+               layoutY="25"
+               prefWidth="150"
+               prefHeight="35"
+               alignment="CENTER"
+               style="-fx-background-color: white;
+                      -fx-background-radius: 12;
+                      -fx-border-color: black;
+                      -fx-border-radius: 12;
+                      -fx-font-size: 18px;
+                      -fx-font-weight: bold;" />
+
+        <ImageView layoutX="470"
+                   layoutY="70"
+                   fitWidth="60"
+                   fitHeight="60"
+                   preserveRatio="true">
+
+            <image>
+                <Image url="@../images/profile_icon.png"/>
+            </image>
+
+        </ImageView>
+
+        <!-- Player 4 -->
+        <Label fx:id="player4Label"
+               text="Player 4"
+               layoutX="705"
+               layoutY="110"
+               prefWidth="150"
+               prefHeight="35"
+               alignment="CENTER"
+               style="-fx-background-color: white;
+                      -fx-background-radius: 12;
+                      -fx-border-color: black;
+                      -fx-border-radius: 12;
+                      -fx-font-size: 18px;
+                      -fx-font-weight: bold;" />
+
+        <ImageView layoutX="795"
+                   layoutY="155"
+                   fitWidth="60"
+                   fitHeight="60"
+                   preserveRatio="true">
+
+            <image>
+                <Image url="@../images/profile_icon.png"/>
+            </image>
+
+        </ImageView>
+
+        <!-- Draw Button -->
         <Button fx:id="drawButton"
-                text="Draw"
+                text="Draw Card"
                 onAction="#handleDrawCard"
-                layoutX="245"
-                layoutY="95"
-                prefWidth="90"
-                prefHeight="65"
+                layoutX="235"
+                layoutY="255"
+                prefWidth="120"
+                prefHeight="70"
                 style="-fx-background-radius: 15;
                        -fx-background-color: black;
                        -fx-text-fill: white;
-                       -fx-font-size: 16px;" />
+                       -fx-font-size: 16px;
+                       -fx-font-weight: bold;" />
 
+        <!-- Top Card -->
         <Button fx:id="topCardDisplay"
-                layoutX="480"
-                layoutY="250"
-                prefWidth="110"
-                prefHeight="150"
+                layoutX="395"
+                layoutY="215"
+                prefWidth="120"
+                prefHeight="170"
                 style="-fx-background-color: transparent;" />
 
+        <!-- Human Hand -->
         <HBox fx:id="handContainer"
-              layoutX="300"
-              layoutY="450"
-              spacing="-12"
+              layoutX="170"
+              layoutY="435"
+              spacing="-15"
               alignment="CENTER"
-              prefWidth="500"
-              maxWidth="500" />
+              prefWidth="560"
+              prefHeight="140" />
 
+        <!-- Player 2 Hand -->
         <HBox fx:id="player2HandContainer"
-              layoutX="125"
-              layoutY="285"
-              spacing="-30" />
+              layoutX="120"
+              layoutY="265"
+              spacing="-28"
+              alignment="CENTER" />
 
+        <!-- Player 3 Hand -->
         <HBox fx:id="player3HandContainer"
-              layoutX="385"
-              layoutY="165"
-              spacing="-18" />
+              layoutX="340"
+              layoutY="145"
+              spacing="-18"
+              alignment="CENTER" />
 
+        <!-- Player 4 Hand -->
         <HBox fx:id="player4HandContainer"
-              layoutX="700"
-              layoutY="315"
-              spacing="-30" />
+              layoutX="645"
+              layoutY="265"
+              spacing="-28"
+              alignment="CENTER" />
 
+        <!-- Continue Button -->
         <Button fx:id="continueButton"
                 text="Continue"
                 onAction="#handleContinue"
-                layoutX="690"
-                layoutY="520"
-                prefWidth="160"
-                prefHeight="45"
+                layoutX="700"
+                layoutY="525"
+                prefWidth="150"
+                prefHeight="42"
                 visible="false"
                 style="-fx-background-color: white;
-               -fx-background-radius: 15;
-               -fx-font-size: 18px;
-               -fx-font-weight: bold;" />
+                       -fx-background-radius: 15;
+                       -fx-font-size: 18px;
+                       -fx-font-weight: bold;" />
+
     </AnchorPane>
 
 </StackPane>
