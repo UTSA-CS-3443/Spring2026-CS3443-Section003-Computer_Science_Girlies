@@ -14,10 +14,11 @@ import javafx.stage.Stage;
 
 public class MenuController {
 
+    //handle reads the correlating .fxml file that gives you the layout
     @FXML
     private void handlePlayGame(ActionEvent event) {
         switchScene(event, "/layouts/lobby.fxml");
-    }
+    } 
 
     @FXML
     private void handleHowToPlay(ActionEvent event) {

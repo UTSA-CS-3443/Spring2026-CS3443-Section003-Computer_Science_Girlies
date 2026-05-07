@@ -67,6 +67,7 @@ public class SettingsController {
                 getSettingValue("colorblindMode").equalsIgnoreCase("ON"));
     }
 
+    ///reads settings.csv
     public void loadSettings() {
         InputStream stream = getClass().getResourceAsStream("/data/settings.csv");
 
@@ -97,7 +98,7 @@ public class SettingsController {
             System.out.println("Error loading settings: " + e.getMessage());
         }
     }
-
+    //Choice boxes: Language, Controlls, Appearance, Resolution and Display Mode
     private void setupComboBox(ComboBox<String> box, String key) {
         Setting setting = settingsMap.get(key);
 
@@ -109,7 +110,7 @@ public class SettingsController {
         box.getItems().addAll(setting.getOptions());
         box.setValue(setting.getValue());
     }
-
+    //Check boxes Music, sound effects, and colorblind mode
     private void setupCheckBox(CheckBox checkBox, String key) {
         Setting setting = settingsMap.get(key);
 
@@ -127,7 +128,10 @@ public class SettingsController {
         applySettings(event);
         System.out.println("Settings saved and applied.");
     }
-
+    /*
+    Once you update your settings they then need to be applied
+    */
+   //apply = setters
     private void applySettings(ActionEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -267,7 +271,7 @@ public class SettingsController {
                     + "-fx-font-weight: bold;");
         }
     }
-
+    
     private void applyResolution(Stage stage, String resolution) {
         if (resolution == null || !resolution.contains("x")) {
             return;
@@ -307,7 +311,7 @@ public class SettingsController {
             stage.setMaximized(true);
         }
     }
-
+    //Updates settings by mapping the setters to main application
     public void updateSettings() {
         settingsMap.get("language").setValue(languageBox.getValue());
         settingsMap.get("controls").setValue(controlsBox.getValue());
@@ -351,7 +355,7 @@ public class SettingsController {
             System.out.println("Error saving settings: " + e.getMessage());
         }
     }
-
+    //getters
     private String getSettingValue(String key) {
         Setting setting = settingsMap.get(key);
 
