@@ -10,12 +10,14 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Text?>
 
-<StackPane xmlns:fx="http://javafx.com/fxml"
+<StackPane fx:id="settingsRoot"
+           xmlns:fx="http://javafx.com/fxml"
            fx:controller="edu.utsa.cs3443.project_demo.controller.SettingsController"
            prefWidth="900"
            prefHeight="600">
 
-    <ImageView fitWidth="900"
+    <ImageView fx:id="backgroundImage"
+               fitWidth="900"
                fitHeight="600"
                preserveRatio="false">
         <image>
@@ -47,7 +49,8 @@
                      -fx-fill: white;
                      -fx-font-family: 'Arial Rounded MT Bold';" />
 
-        <Label text="Language"
+        <Label fx:id="languageLabel"
+               text="Language"
                layoutX="235"
                layoutY="75"
                style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" />
@@ -59,7 +62,8 @@
                   prefHeight="38"
                   style="-fx-background-radius: 12;" />
 
-        <Label text="Controls"
+        <Label fx:id="controlsLabel"
+               text="Controls"
                layoutX="235"
                layoutY="140"
                style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" />
@@ -71,7 +75,8 @@
                   prefHeight="38"
                   style="-fx-background-radius: 12;" />
 
-        <Label text="Appearance"
+        <Label fx:id="appearanceLabel"
+               text="Appearance"
                layoutX="235"
                layoutY="205"
                style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" />
@@ -83,7 +88,8 @@
                   prefHeight="38"
                   style="-fx-background-radius: 12;" />
 
-        <Label text="Resolution"
+        <Label fx:id="resolutionLabel"
+               text="Resolution"
                layoutX="235"
                layoutY="270"
                style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" />
@@ -95,7 +101,8 @@
                   prefHeight="38"
                   style="-fx-background-radius: 12;" />
 
-        <Label text="Display Mode"
+        <Label fx:id="displayModeLabel"
+               text="Display Mode"
                layoutX="235"
                layoutY="335"
                style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" />
@@ -125,7 +132,8 @@
                   text="Colorblind Mode"
                   style="-fx-text-fill: white; -fx-font-size: 16px;" />
 
-        <Button text="Save Settings"
+        <Button fx:id="saveButton"
+                text="Save Settings"
                 onAction="#handleSave"
                 layoutX="365"
                 layoutY="535"
