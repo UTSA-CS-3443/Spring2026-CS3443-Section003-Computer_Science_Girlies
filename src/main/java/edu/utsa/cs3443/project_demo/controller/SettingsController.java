@@ -165,6 +165,22 @@ public class SettingsController {
 
             backButton.setText("Volver al Menú");
             saveButton.setText("Guardar");
+
+        } else if (language.equalsIgnoreCase("French")) {
+            settingsTitle.setText("Paramètres");
+            languageLabel.setText("Langue");
+            controlsLabel.setText("Commandes");
+            appearanceLabel.setText("Apparence");
+            resolutionLabel.setText("Résolution");
+            displayModeLabel.setText("Mode d'affichage");
+
+            musicCheck.setText("Musique");
+            sfxCheck.setText("Effets sonores");
+            colorblindCheck.setText("Mode daltonien");
+
+            backButton.setText("Retour au menu");
+            saveButton.setText("Enregistrer");
+
         } else {
             settingsTitle.setText("Settings");
             languageLabel.setText("Language");
