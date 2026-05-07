@@ -1,9 +1,0 @@
-Setting,Type,Value,Options
-controls,choice,Keyboard,Keyboard;Mouse;Controller
-appearance,choice,Light,Light;Dark;Auto
-music,bool,OFF,ON;OFF
-language,choice,English,English;Spanish;French
-colorblindMode,bool,OFF,ON;OFF
-resolution,choice,1920x1080,1920x1080;1280x720;800x600;2560x1440
-displayMode,choice,Fullscreen,Fullscreen;Windowed;Borderless
-soundEffects,bool,ON,ON;OFF
