@@ -12,7 +12,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.layout.StackPane;
 
+import edu.utsa.cs3443.project_demo.MainApp;
 import edu.utsa.cs3443.project_demo.model.Card;
 import edu.utsa.cs3443.project_demo.model.Game;
 import edu.utsa.cs3443.project_demo.model.Player;
@@ -258,13 +260,36 @@ public class GameController {
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            Scene scene = new Scene(root, 900, 600);
+            StackPane wrapper = new StackPane(root);
+            wrapper.setStyle("-fx-background-color: #9e9e9e;");
+
+            Scene scene = new Scene(wrapper, stage.getWidth(), stage.getHeight());
 
             stage.setScene(scene);
-            stage.setResizable(false);
-            stage.setMaximized(false);
-            stage.setWidth(900);
-            stage.setHeight(600);
+
+            if (MainApp.currentDisplayMode.equalsIgnoreCase("Fullscreen")) {
+                stage.setFullScreen(true);
+                stage.setMaximized(false);
+
+            } else if (MainApp.currentDisplayMode.equalsIgnoreCase("Maximized")) {
+                stage.setFullScreen(false);
+                stage.setMaximized(true);
+
+            } else {
+                stage.setFullScreen(false);
+                stage.setMaximized(false);
+
+                if (MainApp.currentResolution.contains("x")) {
+                    String[] parts = MainApp.currentResolution.toLowerCase().split("x");
+
+                    double width = Double.parseDouble(parts[0].trim());
+                    double height = Double.parseDouble(parts[1].trim());
+
+                    stage.setWidth(width);
+                    stage.setHeight(height);
+                }
+            }
+
             stage.centerOnScreen();
 
         } catch (IOException e) {
