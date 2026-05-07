@@ -3,6 +3,7 @@ package edu.utsa.cs3443.project_demo.controller;
 import java.io.*;
 import java.util.*;
 
+import edu.utsa.cs3443.project_demo.MainApp;
 import edu.utsa.cs3443.project_demo.model.Setting;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,13 +11,32 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class SettingsController {
 
     private Map<String, Setting> settingsMap = new HashMap<>();
+
+    @FXML private StackPane settingsRoot;
+    @FXML private ImageView backgroundImage;
+
+    @FXML private Text settingsTitle;
+
+    @FXML private Label languageLabel;
+    @FXML private Label controlsLabel;
+    @FXML private Label appearanceLabel;
+    @FXML private Label resolutionLabel;
+    @FXML private Label displayModeLabel;
+
+    @FXML private Button backButton;
+    @FXML private Button saveButton;
 
     @FXML private ComboBox<String> languageBox;
     @FXML private ComboBox<String> controlsBox;
@@ -41,6 +61,10 @@ public class SettingsController {
         setupCheckBox(musicCheck, "music");
         setupCheckBox(sfxCheck, "soundEffects");
         setupCheckBox(colorblindCheck, "colorblindMode");
+
+        applyLanguage(getSettingValue("language"));
+        applyAppearance(getSettingValue("appearance"),
+                getSettingValue("colorblindMode").equalsIgnoreCase("ON"));
     }
 
     public void loadSettings() {
@@ -77,7 +101,7 @@ public class SettingsController {
     private void setupComboBox(ComboBox<String> box, String key) {
         Setting setting = settingsMap.get(key);
 
-        if (setting == null) {
+        if (setting == null || box == null) {
             return;
         }
 
@@ -89,7 +113,7 @@ public class SettingsController {
     private void setupCheckBox(CheckBox checkBox, String key) {
         Setting setting = settingsMap.get(key);
 
-        if (setting == null) {
+        if (setting == null || checkBox == null) {
             return;
         }
 
@@ -107,22 +131,124 @@ public class SettingsController {
     private void applySettings(ActionEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        String appearance = settingsMap.get("appearance").getValue();
-        String resolution = settingsMap.get("resolution").getValue();
-        String displayMode = settingsMap.get("displayMode").getValue();
+        String language = getSettingValue("language");
+        String appearance = getSettingValue("appearance");
+        String resolution = getSettingValue("resolution");
+        String displayMode = getSettingValue("displayMode");
 
-        applyAppearance(stage.getScene(), appearance);
+        boolean musicOn = getSettingValue("music").equalsIgnoreCase("ON");
+        boolean colorblindOn = getSettingValue("colorblindMode").equalsIgnoreCase("ON");
+
+        applyLanguage(language);
+        applyAppearance(appearance, colorblindOn);
         applyResolution(stage, resolution);
         applyDisplayMode(stage, displayMode);
+        MainApp.setMusicEnabled(musicOn);
     }
 
-    private void applyAppearance(Scene scene, String appearance) {
-        Parent root = scene.getRoot();
+    private void applyLanguage(String language) {
+        if (language == null) {
+            return;
+        }
+
+        if (language.equalsIgnoreCase("Spanish")) {
+            settingsTitle.setText("Configuración");
+            languageLabel.setText("Idioma");
+            controlsLabel.setText("Controles");
+            appearanceLabel.setText("Apariencia");
+            resolutionLabel.setText("Resolución");
+            displayModeLabel.setText("Modo de Pantalla");
+
+            musicCheck.setText("Música");
+            sfxCheck.setText("Efectos de Sonido");
+            colorblindCheck.setText("Modo Daltónico");
+
+            backButton.setText("Volver al Menú");
+            saveButton.setText("Guardar");
+        } else {
+            settingsTitle.setText("Settings");
+            languageLabel.setText("Language");
+            controlsLabel.setText("Controls");
+            appearanceLabel.setText("Appearance");
+            resolutionLabel.setText("Resolution");
+            displayModeLabel.setText("Display Mode");
+
+            musicCheck.setText("Music");
+            sfxCheck.setText("Sound Effects");
+            colorblindCheck.setText("Colorblind Mode");
+
+            backButton.setText("Back to Main Menu");
+            saveButton.setText("Save Settings");
+        }
+    }
+
+    private void applyAppearance(String appearance, boolean colorblindOn) {
+        if (settingsRoot == null) {
+            return;
+        }
+
+        String backgroundColor;
+        String textColor;
+        String buttonColor;
 
         if (appearance.equalsIgnoreCase("Dark")) {
-            root.setStyle("-fx-background-color: #1e1e1e;");
+            backgroundColor = "#1e1e1e";
+            textColor = "white";
+            buttonColor = "#2f2f2f";
         } else {
-            root.setStyle("-fx-background-color: #f5f5f5;");
+            backgroundColor = "#4fc3e8";
+            textColor = "white";
+            buttonColor = "white";
+        }
+
+        if (colorblindOn) {
+            backgroundColor = "#0072B2";
+            buttonColor = "#E69F00";
+            textColor = "white";
+        }
+
+        settingsRoot.setStyle("-fx-background-color: " + backgroundColor + ";");
+
+        settingsTitle.setStyle("-fx-font-size: 28px;"
+                + "-fx-fill: " + textColor + ";"
+                + "-fx-font-family: 'Arial Rounded MT Bold';");
+
+        styleLabel(languageLabel, textColor);
+        styleLabel(controlsLabel, textColor);
+        styleLabel(appearanceLabel, textColor);
+        styleLabel(resolutionLabel, textColor);
+        styleLabel(displayModeLabel, textColor);
+
+        styleCheckBox(musicCheck, textColor);
+        styleCheckBox(sfxCheck, textColor);
+        styleCheckBox(colorblindCheck, textColor);
+
+        styleButton(backButton, buttonColor);
+        styleButton(saveButton, buttonColor);
+    }
+
+    private void styleLabel(Label label, String textColor) {
+        if (label != null) {
+            label.setStyle("-fx-text-fill: " + textColor + ";"
+                    + "-fx-font-size: 14px;"
+                    + "-fx-font-weight: bold;");
+        }
+    }
+
+    private void styleCheckBox(CheckBox checkBox, String textColor) {
+        if (checkBox != null) {
+            checkBox.setStyle("-fx-text-fill: " + textColor + ";"
+                    + "-fx-font-size: 16px;");
+        }
+    }
+
+    private void styleButton(Button button, String buttonColor) {
+        if (button != null) {
+            button.setStyle("-fx-font-size: 14px;"
+                    + "-fx-background-radius: 12;"
+                    + "-fx-background-color: " + buttonColor + ";"
+                    + "-fx-text-fill: black;"
+                    + "-fx-font-weight: bold;");
         }
     }
 
@@ -137,8 +263,11 @@ public class SettingsController {
             double width = Double.parseDouble(parts[0].trim());
             double height = Double.parseDouble(parts[1].trim());
 
+            stage.setFullScreen(false);
+            stage.setMaximized(false);
             stage.setWidth(width);
             stage.setHeight(height);
+
             stage.centerOnScreen();
 
         } catch (NumberFormatException e) {
@@ -196,6 +325,16 @@ public class SettingsController {
         } catch (IOException e) {
             System.out.println("Error saving settings: " + e.getMessage());
         }
+    }
+
+    private String getSettingValue(String key) {
+        Setting setting = settingsMap.get(key);
+
+        if (setting == null || setting.getValue() == null) {
+            return "";
+        }
+
+        return setting.getValue();
     }
 
     @FXML
