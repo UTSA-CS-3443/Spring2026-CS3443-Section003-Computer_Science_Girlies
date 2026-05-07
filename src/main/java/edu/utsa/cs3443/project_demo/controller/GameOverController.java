@@ -18,10 +18,14 @@ import java.io.InputStream;
 
 public class GameOverController {
 
-    @FXML private ImageView player1ResultImage;
-    @FXML private ImageView player2ResultImage;
-    @FXML private ImageView player3ResultImage;
-    @FXML private ImageView player4ResultImage;
+    @FXML
+    private ImageView player1ResultImage;
+    @FXML
+    private ImageView player2ResultImage;
+    @FXML
+    private ImageView player3ResultImage;
+    @FXML
+    private ImageView player4ResultImage;
 
     private static int winnerIndex = 0;
 
@@ -110,3 +114,4 @@ public class GameOverController {
             e.printStackTrace();
         }
     }
+}
