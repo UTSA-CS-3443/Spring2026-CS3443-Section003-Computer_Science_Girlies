@@ -29,19 +29,19 @@
         <!-- Turn Label -->
         <Text fx:id="turnLabel"
               text="Your Turn"
-              layoutX="35"
-              layoutY="520"
-              wrappingWidth="230"
+              layoutX="675"
+              layoutY="45"
+              wrappingWidth="190"
               textAlignment="CENTER"
-              style="-fx-font-size: 22px;
+              style="-fx-font-size: 20px;
                      -fx-fill: white;
                      -fx-font-family: 'Arial Rounded MT Bold';" />
 
-        <!-- Player 2 -->
-        <Label fx:id="player2Label"
-               text="Player 2"
-               layoutX="45"
-               layoutY="110"
+        <!-- Player 1 -->
+        <Label fx:id="player1Label"
+               text="Player 1"
+               layoutX="35"
+               layoutY="390"
                prefWidth="150"
                prefHeight="35"
                alignment="CENTER"
@@ -53,7 +53,37 @@
                       -fx-font-weight: bold;" />
 
         <StackPane layoutX="70"
-                   layoutY="155"
+                   layoutY="440"
+                   prefWidth="85"
+                   prefHeight="85">
+            <Rectangle width="85"
+                       height="85"
+                       arcWidth="12"
+                       arcHeight="12"
+                       fill="white"
+                       stroke="#ff2d1f"
+                       strokeWidth="5" />
+            <Text text="😄"
+                  style="-fx-font-size: 52px;" />
+        </StackPane>
+
+        <!-- Player 2 -->
+        <Label fx:id="player2Label"
+               text="Player 2"
+               layoutX="45"
+               layoutY="130"
+               prefWidth="150"
+               prefHeight="35"
+               alignment="CENTER"
+               style="-fx-background-color: white;
+                      -fx-background-radius: 12;
+                      -fx-border-color: black;
+                      -fx-border-radius: 12;
+                      -fx-font-size: 18px;
+                      -fx-font-weight: bold;" />
+
+        <StackPane layoutX="85"
+                   layoutY="180"
                    prefWidth="70"
                    prefHeight="70">
             <Rectangle width="70"
@@ -63,7 +93,7 @@
                        fill="white"
                        stroke="#ffec4f"
                        strokeWidth="4" />
-            <Text text="😄"
+            <Text text="😉"
                   style="-fx-font-size: 42px;" />
         </StackPane>
 
@@ -71,7 +101,7 @@
         <Label fx:id="player3Label"
                text="Player 3"
                layoutX="405"
-               layoutY="25"
+               layoutY="45"
                prefWidth="150"
                prefHeight="35"
                alignment="CENTER"
@@ -82,8 +112,8 @@
                       -fx-font-size: 18px;
                       -fx-font-weight: bold;" />
 
-        <StackPane layoutX="485"
-                   layoutY="70"
+        <StackPane layoutX="445"
+                   layoutY="95"
                    prefWidth="70"
                    prefHeight="70">
             <Rectangle width="70"
@@ -93,7 +123,7 @@
                        fill="white"
                        stroke="#70ef44"
                        strokeWidth="4" />
-            <Text text="😄"
+            <Text text="😍"
                   style="-fx-font-size: 42px;" />
         </StackPane>
 
@@ -101,7 +131,7 @@
         <Label fx:id="player4Label"
                text="Player 4"
                layoutX="705"
-               layoutY="110"
+               layoutY="130"
                prefWidth="150"
                prefHeight="35"
                alignment="CENTER"
@@ -112,8 +142,8 @@
                       -fx-font-size: 18px;
                       -fx-font-weight: bold;" />
 
-        <StackPane layoutX="795"
-                   layoutY="155"
+        <StackPane layoutX="745"
+                   layoutY="180"
                    prefWidth="70"
                    prefHeight="70">
             <Rectangle width="70"
@@ -123,7 +153,7 @@
                        fill="white"
                        stroke="#4d83e8"
                        strokeWidth="4" />
-            <Text text="😄"
+            <Text text="😎"
                   style="-fx-font-size: 42px;" />
         </StackPane>
 
@@ -132,7 +162,7 @@
                 text="Draw Card"
                 onAction="#handleDrawCard"
                 layoutX="235"
-                layoutY="95"
+                layoutY="115"
                 prefWidth="120"
                 prefHeight="60"
                 style="-fx-background-radius: 15;
@@ -143,15 +173,15 @@
 
         <!-- Top Card -->
         <Button fx:id="topCardDisplay"
-                layoutX="415"
-                layoutY="245"
+                layoutX="425"
+                layoutY="265"
                 prefWidth="120"
                 prefHeight="170"
                 style="-fx-background-color: transparent;" />
 
         <!-- Human Hand -->
         <HBox fx:id="handContainer"
-              layoutX="170"
+              layoutX="220"
               layoutY="435"
               spacing="-15"
               alignment="CENTER"
@@ -161,21 +191,21 @@
         <!-- Player 2 Hand -->
         <HBox fx:id="player2HandContainer"
               layoutX="120"
-              layoutY="265"
+              layoutY="285"
               spacing="-28"
               alignment="CENTER" />
 
         <!-- Player 3 Hand -->
         <HBox fx:id="player3HandContainer"
               layoutX="365"
-              layoutY="145"
+              layoutY="185"
               spacing="-18"
               alignment="CENTER" />
 
         <!-- Player 4 Hand -->
         <HBox fx:id="player4HandContainer"
               layoutX="645"
-              layoutY="265"
+              layoutY="285"
               spacing="-28"
               alignment="CENTER" />
 
