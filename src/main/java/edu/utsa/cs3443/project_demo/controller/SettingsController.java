@@ -318,6 +318,15 @@ public class SettingsController {
         settingsMap.get("music").setValue(musicCheck.isSelected() ? "ON" : "OFF");
         settingsMap.get("soundEffects").setValue(sfxCheck.isSelected() ? "ON" : "OFF");
         settingsMap.get("colorblindMode").setValue(colorblindCheck.isSelected() ? "ON" : "OFF");
+
+        MainApp.currentLanguage = languageBox.getValue();
+        MainApp.currentAppearance = appearanceBox.getValue();
+        MainApp.currentResolution = resolutionBox.getValue();
+        MainApp.currentDisplayMode = displayModeBox.getValue();
+
+        MainApp.musicEnabled = musicCheck.isSelected();
+        MainApp.soundEffectsEnabled = sfxCheck.isSelected();
+        MainApp.colorblindModeEnabled = colorblindCheck.isSelected();
     }
 
     public void saveToCSV() {
