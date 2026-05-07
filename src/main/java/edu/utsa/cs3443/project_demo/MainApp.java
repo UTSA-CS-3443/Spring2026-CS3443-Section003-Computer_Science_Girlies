@@ -10,6 +10,15 @@ import javafx.stage.Stage;
 public class MainApp extends Application {
 
     private static MediaPlayer mediaPlayer;
+    // Global application settings
+    public static String currentLanguage = "English";
+    public static String currentAppearance = "Light";
+    public static String currentResolution = "900x600";
+    public static String currentDisplayMode = "Windowed";
+
+    public static boolean musicEnabled = true;
+    public static boolean soundEffectsEnabled = true;
+    public static boolean colorblindModeEnabled = false;
 
     @Override
     public void start(Stage stage) throws Exception {
