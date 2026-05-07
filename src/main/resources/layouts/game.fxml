@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
 <StackPane xmlns:fx="http://javafx.com/fxml"
@@ -28,8 +29,8 @@
         <!-- Turn Label -->
         <Text fx:id="turnLabel"
               text="Your Turn"
-              layoutX="25"
-              layoutY="555"
+              layoutX="35"
+              layoutY="520"
               wrappingWidth="230"
               textAlignment="CENTER"
               style="-fx-font-size: 22px;
@@ -51,20 +52,25 @@
                       -fx-font-size: 18px;
                       -fx-font-weight: bold;" />
 
-        <ImageView layoutX="75"
+        <StackPane layoutX="70"
                    layoutY="155"
-                   fitWidth="60"
-                   fitHeight="60"
-                   preserveRatio="true">
-            <image>
-                <Image url="@../images/profile_icon.png"/>
-            </image>
-        </ImageView>
+                   prefWidth="70"
+                   prefHeight="70">
+            <Rectangle width="70"
+                       height="70"
+                       arcWidth="10"
+                       arcHeight="10"
+                       fill="white"
+                       stroke="#ffec4f"
+                       strokeWidth="4" />
+            <Text text="😄"
+                  style="-fx-font-size: 42px;" />
+        </StackPane>
 
         <!-- Player 3 -->
         <Label fx:id="player3Label"
                text="Player 3"
-               layoutX="375"
+               layoutX="405"
                layoutY="25"
                prefWidth="150"
                prefHeight="35"
@@ -76,15 +82,20 @@
                       -fx-font-size: 18px;
                       -fx-font-weight: bold;" />
 
-        <ImageView layoutX="470"
+        <StackPane layoutX="485"
                    layoutY="70"
-                   fitWidth="60"
-                   fitHeight="60"
-                   preserveRatio="true">
-            <image>
-                <Image url="@../images/profile_icon.png"/>
-            </image>
-        </ImageView>
+                   prefWidth="70"
+                   prefHeight="70">
+            <Rectangle width="70"
+                       height="70"
+                       arcWidth="10"
+                       arcHeight="10"
+                       fill="white"
+                       stroke="#70ef44"
+                       strokeWidth="4" />
+            <Text text="😄"
+                  style="-fx-font-size: 42px;" />
+        </StackPane>
 
         <!-- Player 4 -->
         <Label fx:id="player4Label"
@@ -101,15 +112,20 @@
                       -fx-font-size: 18px;
                       -fx-font-weight: bold;" />
 
-        <ImageView layoutX="795"
+        <StackPane layoutX="795"
                    layoutY="155"
-                   fitWidth="60"
-                   fitHeight="60"
-                   preserveRatio="true">
-            <image>
-                <Image url="@../images/profile_icon.png"/>
-            </image>
-        </ImageView>
+                   prefWidth="70"
+                   prefHeight="70">
+            <Rectangle width="70"
+                       height="70"
+                       arcWidth="10"
+                       arcHeight="10"
+                       fill="white"
+                       stroke="#4d83e8"
+                       strokeWidth="4" />
+            <Text text="😄"
+                  style="-fx-font-size: 42px;" />
+        </StackPane>
 
         <!-- Draw Button -->
         <Button fx:id="drawButton"
@@ -127,7 +143,7 @@
 
         <!-- Top Card -->
         <Button fx:id="topCardDisplay"
-                layoutX="395"
+                layoutX="415"
                 layoutY="245"
                 prefWidth="120"
                 prefHeight="170"
@@ -151,7 +167,7 @@
 
         <!-- Player 3 Hand -->
         <HBox fx:id="player3HandContainer"
-              layoutX="340"
+              layoutX="365"
               layoutY="145"
               spacing="-18"
               alignment="CENTER" />
